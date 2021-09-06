@@ -74,6 +74,11 @@ module.exports = {
         //         name: STATIC_PRO + '/img/[name].[contenthash:7].[ext]',
         //         publicPath: isProduction ? CDN : ''
         //     });
+        config.module
+            .rule('ts')
+            .test(/\.ts$/)
+            .use('ts-loader')
+            .loader(require.resolve('ts-loader'));
     },
     sourceMap: isProduction
 };
